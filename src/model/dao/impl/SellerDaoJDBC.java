@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import com.mysql.jdbc.Statement;
 
 import db.DB;
@@ -137,7 +136,8 @@ public class SellerDaoJDBC implements SellerDao {
 		}
 	}
 
-	private Seller instantiateSeller(ResultSet rs, Department dep) throws SQLException {
+private Seller instantiateSeller(ResultSet rs, Department dep) throws SQLException {
+		
 		Seller obj = new Seller();
 		obj.setId(rs.getInt("Id"));
 		obj.setName(rs.getString("Name"));
@@ -146,6 +146,7 @@ public class SellerDaoJDBC implements SellerDao {
 		obj.setBirthDate(rs.getDate("BirthDate"));
 		obj.setDepartment(dep);
 		return obj;
+		
 	}
 
 	private Department instantiateDepartment(ResultSet rs) throws SQLException {
